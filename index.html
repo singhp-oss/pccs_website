@@ -1,0 +1,4165 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PCCS – Pradeep Cargo & Courier Service. Premium air, road & rail cargo logistics from Kolkata. Track IndiGo Cargo AWB inline, no redirects." />
+  <title>PCCS — Pradeep Cargo & Courier Service | Premium Logistics, Kolkata</title>
+
+  <link rel="icon" type="image/png" href="pccs_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ==========================================================
+       DESIGN TOKENS — Deep Navy Glassmorphism Premium Theme
+       Background : #0B132B (rich deep navy)
+       Primary    : #002060 (logo navy)
+       Accent     : #E31937 (logo red — CTAs)
+       Sky        : #0066CC (logo airplane blue)
+       Text       : #FFFFFF / #C7D2E8 (silver)
+       Glass      : rgba(255,255,255,0.08) with blur
+       ========================================================== */
+    :root {
+      --bg-deep:      #0B132B;
+      --bg-mid:       #111A35;
+      --bg-card:      #16213E;
+      --navy:         #002060;
+      --navy-soft:    #0a2c7a;
+      --navy-deep:    #001847;
+      --navy-tint:    rgba(255,255,255,0.06);
+      --red:          #E31937;
+      --red-dark:     #b8122c;
+      --red-soft:     rgba(227,25,55,0.18);
+      --sky:          #0066CC;
+      --sky-soft:     rgba(0,102,204,0.18);
+      --ink:          #FFFFFF;
+      --ink-soft:     #C7D2E8;
+      --muted:        #8FA0C0;
+      --line:         rgba(255,255,255,0.10);
+      --line-strong:  rgba(255,255,255,0.18);
+      --ivory:        #fbf8f1;
+      --cloud:        rgba(255,255,255,0.05);
+      --page-bg:      #0B132B;
+      --white:        #ffffff;
+      --gold:         #c9a14a;
+      --green:        #22c55e;
+      --amber:        #f59e0b;
+
+      --glass-bg:     rgba(255,255,255,0.08);
+      --glass-bg-strong: rgba(255,255,255,0.12);
+      --glass-border: rgba(255,255,255,0.18);
+      --glass-blur:   18px;
+
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.30), 0 1px 3px rgba(0,0,0,0.20);
+      --shadow-md: 0 6px 18px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.20);
+      --shadow-lg: 0 18px 50px rgba(0,0,0,0.45), 0 6px 14px rgba(0,0,0,0.25);
+      --shadow-xl: 0 30px 80px rgba(0,0,0,0.55), 0 10px 24px rgba(0,0,0,0.30);
+      --shadow-glow-red: 0 8px 24px rgba(227,25,55,0.40);
+      --shadow-glow-sky: 0 8px 24px rgba(0,102,204,0.35);
+
+      --radius:     6px;
+      --radius-lg:  12px;
+      --radius-xl:  18px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(ellipse 60% 50% at 100% 0%, rgba(0,102,204,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 0% 100%, rgba(227,25,55,0.08) 0%, transparent 55%),
+        var(--bg-deep);
+      background-attachment: fixed;
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--red); color: #fff; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ===== TYPOGRAPHY ===== */
+    .display {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    .section { padding: 6.5rem 0; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: rgba(11,19,43,0.65);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+      transition: box-shadow 0.25s, background 0.25s;
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+      background: rgba(11,19,43,0.85);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 92px;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  filter 0.4s ease;
+    }
+
+    .brand:hover { transform: translateY(-2px); }
+
+    /* Logo container — relative so SVG wave can overlay absolutely */
+    .brand-logo-wrap {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+    }
+
+    .brand-logo {
+      width: 180px;
+      height: auto;
+      max-height: 72px;
+      object-fit: contain;
+      flex-shrink: 0;
+      /* ORIGINAL logo image is used as-is (white background fully intact).
+         CSS mask applies an elliptical vignette that:
+           - keeps the CENTER (logo design: globe, text, ribbon) 100% visible
+           - fades the 4 RECTANGULAR EDGES into the navy header background
+         No image processing — logo design is never altered, only the
+         rectangular boundary is dissolved via the mask gradient. */
+      -webkit-mask-image: radial-gradient(ellipse 65% 70% at center,
+                                #000 45%,
+                                rgba(0,0,0,0.6) 65%,
+                                rgba(0,0,0,0.15) 85%,
+                                transparent 95%);
+      mask-image: radial-gradient(ellipse 65% 70% at center,
+                                #000 45%,
+                                rgba(0,0,0,0.6) 65%,
+                                rgba(0,0,0,0.15) 85%,
+                                transparent 95%);
+      animation: logo-float-subtle 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    /* SVG wave overlay — positioned exactly over the red ribbon area
+       (top: 49%, height: 20% of logo, as analyzed from the original image) */
+    .ribbon-wave-overlay {
+      position: absolute;
+      top: 49%;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      pointer-events: none;
+      mix-blend-mode: screen;  /* white shimmer blends onto red ribbon */
+      opacity: 0.85;
+    }
+
+    /* Subtle vertical float for the whole logo */
+    @keyframes logo-float-subtle {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-3px) rotate(-0.5deg); }
+    }
+
+    .brand:hover .brand-logo {
+      transform: scale(1.05) rotate(-2deg);
+      filter: drop-shadow(0 4px 12px rgba(227,25,55,0.4));
+    }
+
+    .brand-text { display: none; }  /* Logo is large enough; text hidden */
+
+    nav.primary {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    nav.primary a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    nav.primary a:not(.btn-nav)::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+
+    nav.primary a:not(.btn-nav):hover { color: #fff; }
+    nav.primary a:not(.btn-nav):hover::after { transform: scaleX(1); }
+
+    .btn-nav {
+      background: var(--red);
+      color: #fff !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+      box-shadow: var(--shadow-glow-red);
+    }
+
+    #mobileMenuBtn {
+      display: none;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: #fff;
+      padding: 0.55rem;
+      cursor: pointer;
+      border-radius: var(--radius);
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    #mobileNav {
+      display: none;
+      background: rgba(11,19,43,0.92);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border-top: 1px solid var(--line);
+      padding: 1rem 1.75rem 1.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    #mobileNav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.85rem 0.5rem;
+      border-bottom: 1px solid var(--line);
+      display: block;
+    }
+
+    #mobileNav a:last-child { border-bottom: none; color: var(--red); }
+
+    /* ===== HERO — cinematic layered depth ===== */
+    #home {
+      position: relative;
+      padding: 10rem 0 5rem;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 0%, rgba(0,102,204,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 10% 100%, rgba(227,25,55,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(201,161,74,0.06) 0%, transparent 70%),
+        transparent;
+    }
+
+    /* Subtle world-map dot grid echoing the logo's globe */
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1.5px);
+      background-size: 26px 26px;
+      background-position: 0 0;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 80%);
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* Animated gradient mesh — slowly shifting aurora */
+    #home::after {
+      content: '';
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(circle 500px at 20% 30%, rgba(0,102,204,0.28), transparent 70%),
+        radial-gradient(circle 600px at 80% 70%, rgba(227,25,55,0.18), transparent 70%),
+        radial-gradient(circle 400px at 50% 50%, rgba(201,161,74,0.14), transparent 70%);
+      animation: hero-mesh 20s ease-in-out infinite alternate;
+      pointer-events: none;
+      filter: blur(30px);
+    }
+    @keyframes hero-mesh {
+      0%   { transform: translate(0, 0) scale(1); }
+      50%  { transform: translate(40px, -30px) scale(1.08); }
+      100% { transform: translate(-30px, 40px) scale(1.05); }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-left: 3px solid var(--red);
+      padding: 0.5rem 1rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.75rem;
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      position: relative;
+      overflow: hidden;
+    }
+    /* Shimmer sweep on eyebrow */
+    .hero-eyebrow::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+      animation: eyebrow-shimmer 4s ease-in-out infinite;
+    }
+    @keyframes eyebrow-shimmer {
+      0%, 60% { left: -100%; }
+      100%    { left: 200%; }
+    }
+
+    .hero-eyebrow-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 10px rgba(227,25,55,0.6);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%     { opacity: 0.4; transform: scale(1.35); }
+    }
+
+    .hero-eyebrow span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      color: var(--ink);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--red);
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+    /* Gradient underline on emphasized word */
+    .hero-h1 em::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0.1em;
+      height: 0.12em;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+      border-radius: 999px;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: hero-underline 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 1.5s;
+    }
+    @keyframes hero-underline { to { transform: scaleX(1); } }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-body {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ===== BUTTONS ===== */
+    /* PRIMARY BUTTON — NAVY (trust, premium, brand-aligned)
+       Used for: Get a Quote, Ask About DG, Speak with Cargo Desk, Get Directions */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.95rem 2rem;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 18px rgba(0,32,96,0.40);
+    }
+    .btn-primary:hover {
+      background: var(--navy-soft);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,32,96,0.55);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--glass-bg);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.95rem 2rem;
+      border: 1.5px solid var(--glass-border);
+      cursor: pointer;
+      border-radius: var(--radius);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      transition: background 0.2s, color 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .btn-secondary:hover {
+      background: var(--glass-bg-strong);
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    /* ===== TRACK CARD — GLASSMORPHISM ===== */
+    .track-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-top: 4px solid var(--red);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+      border-radius: var(--radius-lg);
+    }
+
+    .track-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, var(--navy) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .track-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .track-card-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+
+    .track-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .track-card-sub {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .track-fields {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.7rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .field-group { display: flex; flex-direction: column; gap: 0.35rem; }
+
+    .field-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .field-label .req { color: var(--red); }
+
+    .track-input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid var(--line-strong);
+      color: #fff;
+      font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.85rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      border-radius: var(--radius);
+      letter-spacing: 0.05em;
+    }
+
+    .track-input::placeholder {
+      color: rgba(255,255,255,0.40);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .track-input:focus {
+      border-color: var(--red);
+      background: rgba(255,255,255,0.10);
+      box-shadow: 0 0 0 3px rgba(227,25,55,0.18);
+    }
+
+    .track-input.prefix {
+      text-align: center;
+      letter-spacing: 0.18em;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    /* TRACK NOW BUTTON — GOLD (premium, distinct, action)
+       Reserved for the inline tracking form's submit button. */
+    .track-btn {
+      width: 100%;
+      background: var(--gold);
+      color: #1a1300;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 18px rgba(201,161,74,0.35);
+    }
+    .track-btn:hover {
+      background: #d8b355;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(201,161,74,0.50);
+    }
+    .track-btn:active { transform: translateY(0); }
+
+    .track-hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .track-divider {
+      margin: 1.5rem 0;
+      border: none;
+      border-top: 1px dashed var(--line);
+    }
+
+    .track-phones { display: grid; gap: 0.5rem; }
+
+    .track-phone-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .track-phone-item:hover { color: var(--red); }
+    .track-phone-item svg { color: var(--red); flex-shrink: 0; }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(37,211,102,0.10);
+      border: 1px solid rgba(37,211,102,0.4);
+      color: #1f9d55;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.55rem 1rem;
+      margin-top: 0.7rem;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+    .whatsapp-btn:hover { background: rgba(37,211,102,0.20); }
+
+    /* ===== TRACKING RESULT PANEL — GLASS ===== */
+    .track-result {
+      display: none;
+      margin-top: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--sky);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      animation: slideIn 0.4s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .track-result.show { display: block; }
+
+    .track-result-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .track-result-awb {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+
+    .track-result-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: var(--amber);
+      color: #fff;
+    }
+    .track-result-status.delivered { background: var(--green); }
+    .track-result-status.transit  { background: var(--sky); }
+    .track-result-status booked   { background: var(--navy); }
+    .track-result-status.error    { background: var(--red); }
+
+    .track-result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .track-meta {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius);
+    }
+
+    .track-meta-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .track-meta-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .track-timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .track-timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .track-step {
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    .track-step:last-child { padding-bottom: 0; }
+
+    .track-step::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--line);
+    }
+
+    .track-step.done::before    { background: var(--green); border-color: var(--green); }
+    .track-step.active::before  { background: var(--sky);   border-color: var(--sky); box-shadow: 0 0 0 4px rgba(0,102,204,0.18); }
+    .track-step.pending::before { background: #fff; border-color: var(--line); }
+
+    .track-step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .track-step.pending .track-step-title { color: var(--muted); }
+
+    .track-step-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .track-result-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    /* ===== STATS RIBBON ===== */
+    .stats-ribbon {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--bg-deep) 100%);
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stats-ribbon::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--red) 30%, var(--sky) 30%, var(--sky) 60%, var(--gold) 60%, var(--gold) 100%);
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 2.25rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 3rem;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.45rem;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+    .section-eyebrow-line { width: 32px; height: 2px; background: var(--red); }
+    .section-eyebrow span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ===== ABOUT ===== */
+    #about { background: rgba(11,19,43,0.85); position: relative; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .about-h2 em { font-style: italic; color: var(--red); }
+    .about-body {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+      border-left: 3px solid var(--red);
+      padding-left: 1.5rem;
+    }
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .pillar {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-top: 3px solid var(--red);
+      padding: 1.4rem;
+      border-radius: var(--radius-lg);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
+    .pillar:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: var(--glass-bg-strong); }
+    .pillar-icon {
+      width: 40px; height: 40px;
+      background: var(--red);
+      display: grid; place-items: center;
+      margin-bottom: 0.85rem;
+      color: #fff;
+      border-radius: var(--radius);
+    }
+    .pillar strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .about-visual { position: relative; }
+    .about-img-wrap { position: relative; }
+    .about-img-wrap img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      filter: brightness(0.92) contrast(1.05);
+      border: 1px solid var(--glass-border);
+    }
+
+    /* ===== INDIGO ANIMATED OVERLAY (about image) ===== */
+    .indigo-anim img {
+      animation: indigo-pan 14s ease-in-out infinite alternate;
+    }
+    @keyframes indigo-pan {
+      0%   { transform: scale(1.0) translateX(0); }
+      100% { transform: scale(1.10) translateX(-3%); }
+    }
+
+    .indigo-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(11,19,43,0.0) 50%, rgba(11,19,43,0.65) 100%);
+    }
+
+    .indigo-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,32,96,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--glass-border);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+    }
+    .indigo-badge i { color: var(--red); }
+
+    .indigo-route {
+      position: absolute;
+      bottom: 24px; left: 16px; right: 16px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+    }
+    .indigo-dashed-line {
+      flex: 1;
+      height: 2px;
+      background: repeating-linear-gradient(90deg,
+        rgba(255,255,255,0.5) 0 6px, transparent 6px 12px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .indigo-dashed-line i {
+      position: absolute;
+      background: rgba(11,19,43,0.9);
+      padding: 4px;
+      border-radius: 50%;
+      animation: plane-fly 4s ease-in-out infinite;
+    }
+    @keyframes plane-fly {
+      0%   { left: 0%;   transform: translateY(0); }
+      50%  { left: 50%;  transform: translateY(-3px) translateX(-50%); }
+      100% { left: 100%; transform: translateY(0) translateX(-100%); }
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--red);
+      color: #fff;
+      padding: 1.4rem 1.6rem;
+      width: 170px;
+      text-align: center;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+    .about-img-badge strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 2.6rem;
+      line-height: 1;
+    }
+    .about-img-badge span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.95;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* ============================================================
+       CARRIER NETWORK — Transport mediums PCCS partners with
+       (IndiGo Cargo · Indian Railways · Interstate Road Networks)
+       Placed between Services and Clients to clarify the agent model.
+       ============================================================ */
+    #carriers {
+      background: var(--bg-deep);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #carriers::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 50% at 20% 50%, rgba(0,102,204,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 50%, rgba(227,25,55,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .carriers-wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .carriers-head {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .carriers-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+    .carriers-eyebrow-line {
+      width: 32px; height: 2px;
+      background: var(--sky);
+    }
+    .carriers-eyebrow span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sky);
+    }
+    .carriers-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .carriers-h2 em {
+      font-style: italic;
+      color: var(--sky);
+    }
+    .carriers-body {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      max-width: 380px;
+    }
+
+    .carriers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .carrier-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-left: 3px solid var(--sky);
+      padding: 1.5rem 1.25rem;
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .carrier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      background: var(--glass-bg-strong);
+    }
+    .carrier-card-icon {
+      width: 44px; height: 44px;
+      background: rgba(0,102,204,0.15);
+      border: 1px solid rgba(0,102,204,0.35);
+      display: grid; place-items: center;
+      color: var(--sky);
+      border-radius: 10px;
+      margin-bottom: 0.85rem;
+    }
+    .carrier-card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .carrier-card-mode {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 0.65rem;
+    }
+    .carrier-card-desc {
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+    .carrier-card-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,161,74,0.12);
+      border: 1px solid rgba(201,161,74,0.35);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 1024px) {
+      .carriers-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 640px) {
+      .carriers-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       TRUSTED CLIENTS — Premium dedicated section
+       (logo-wall style: large cards, refined typography, gold accent,
+        hover lift, subtle shimmer — designed to make clients feel proud)
+       ============================================================ */
+    #clients {
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,161,74,0.10) 0%, transparent 60%),
+        var(--bg-mid);
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 0;
+    }
+    #clients::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1.5px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 80%);
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .clients-head {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .clients-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .clients-eyebrow-line {
+      width: 36px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .clients-eyebrow span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .clients-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    .clients-h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .clients-sub {
+      max-width: 580px;
+      margin: 1.25rem auto 0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+
+    /* Premium client cards grid — 4 columns for 7 clients + 1 CTA card */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .client-card {
+      position: relative;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-top: 3px solid var(--gold);
+      padding: 2rem 1.5rem 1.75rem;
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      box-shadow: var(--shadow-md);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.35s ease,
+                  background 0.35s ease,
+                  border-color 0.35s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Shimmer sweep on hover */
+    .client-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(201,161,74,0.12) 45%,
+        rgba(255,255,255,0.15) 50%,
+        rgba(201,161,74,0.12) 55%,
+        transparent 100%);
+      pointer-events: none;
+      transition: left 0.7s ease;
+    }
+    .client-card:hover::before { left: 120%; }
+    .client-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg),
+                  0 0 0 1px rgba(201,161,74,0.35);
+      background: var(--glass-bg-strong);
+      border-top-color: #e0c068;
+    }
+
+    .client-card-num {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: rgba(201,161,74,0.18);
+      line-height: 1;
+      user-select: none;
+    }
+    .client-card-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, rgba(201,161,74,0.18), rgba(201,161,74,0.06));
+      border: 1px solid rgba(201,161,74,0.35);
+      display: grid; place-items: center;
+      color: var(--gold);
+      border-radius: 10px;
+      margin-bottom: 1.1rem;
+      transition: transform 0.35s ease, background 0.35s ease;
+    }
+    .client-card:hover .client-card-icon {
+      transform: scale(1.08) rotate(-4deg);
+      background: linear-gradient(135deg, rgba(201,161,74,0.30), rgba(201,161,74,0.12));
+    }
+    .client-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.005em;
+      line-height: 1.15;
+    }
+    .client-card-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .client-card-desc {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      flex: 1;
+    }
+    .client-card-stat {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .client-card-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .client-card-stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* CTA card — "Become a Partner" — last slot in the grid */
+    .client-card-cta {
+      background: linear-gradient(135deg, rgba(201,161,74,0.12), rgba(0,32,96,0.20));
+      border: 1px dashed rgba(201,161,74,0.45);
+      border-top: 3px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+    }
+    .client-card-cta:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(135deg, rgba(201,161,74,0.20), rgba(0,32,96,0.30));
+      border-color: var(--gold);
+    }
+    .client-card-cta-icon {
+      width: 48px; height: 48px;
+      background: var(--gold);
+      display: grid; place-items: center;
+      color: #1a1300;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      transition: transform 0.35s ease;
+    }
+    .client-card-cta:hover .client-card-cta-icon {
+      transform: scale(1.1) rotate(90deg);
+    }
+    .client-card-cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+    .client-card-cta-text {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      line-height: 1.55;
+    }
+    .client-card-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--gold);
+      color: #1a1300;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .client-card-cta-link:hover {
+      background: #e0c068;
+      transform: translateY(-1px);
+    }
+
+    /* Trust badges row (small stats under cards) */
+    .clients-trust-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 1;
+    }
+    .clients-trust-item {
+      text-align: center;
+    }
+    .clients-trust-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .clients-trust-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    @media (max-width: 1024px) {
+      .clients-grid { grid-template-columns: repeat(2, 1fr); }
+      .clients-trust-row { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    }
+    @media (max-width: 640px) {
+      .clients-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       ANIMATED MASCOT — delivery agent that walks across client
+       cards, highlighting each, then invites the visitor to join.
+       ============================================================ */
+    .clients-mascot {
+      position: absolute;
+      width: 64px;
+      height: 88px;
+      z-index: 6;
+      pointer-events: none;
+      opacity: 0;
+      transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                  top  0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.4s ease;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.55));
+    }
+    .clients-mascot .mascot-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      transition: transform 0.3s ease;
+    }
+    /* Facing direction — flip when walking left */
+    .clients-mascot.facing-left .mascot-svg {
+      transform: scaleX(-1);
+    }
+
+    /* Walking leg animations — only when .walking is present */
+    .clients-mascot.walking .m-leg-left {
+      transform-origin: 33px 66px;
+      animation: m-leg-left 0.38s ease-in-out infinite;
+    }
+    .clients-mascot.walking .m-leg-right {
+      transform-origin: 47px 66px;
+      animation: m-leg-right 0.38s ease-in-out infinite;
+    }
+    .clients-mascot.walking .m-body {
+      transform-origin: 40px 50px;
+      animation: m-body-bob 0.38s ease-in-out infinite;
+    }
+    @keyframes m-leg-left {
+      0%, 100% { transform: rotate(-14deg); }
+      50%      { transform: rotate(14deg); }
+    }
+    @keyframes m-leg-right {
+      0%, 100% { transform: rotate(14deg); }
+      50%      { transform: rotate(-14deg); }
+    }
+    @keyframes m-body-bob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-2px); }
+    }
+
+    /* Right arm — raises to "present" the CTA card when pointing */
+    .m-arm-right {
+      transform-origin: 57px 40px;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .clients-mascot.pointing .m-arm-right {
+      transform: rotate(-30deg);
+    }
+
+    /* Card highlight when mascot is visiting */
+    .client-card.tour-active,
+    .client-card-cta.tour-active {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: var(--shadow-lg),
+                  0 0 0 2px var(--gold),
+                  0 0 28px rgba(201,161,74,0.45);
+      border-top-color: #e0c068;
+      background: var(--glass-bg-strong);
+    }
+
+    /* Speech bubble */
+    .clients-bubble {
+      position: absolute;
+      transform: translate(-50%, -100%);
+      z-index: 10;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .clients-bubble.show {
+      opacity: 1;
+    }
+    .clients-bubble-inner {
+      background: #fff;
+      color: #002060;
+      padding: 0.85rem 1.15rem;
+      border-radius: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5),
+                  0 0 0 1px rgba(201,161,74,0.3);
+      white-space: nowrap;
+      transform: scale(0.8) translateY(8px);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .clients-bubble.show .clients-bubble-inner {
+      transform: scale(1) translateY(0);
+      animation: bubble-float 2.5s ease-in-out infinite 0.6s;
+    }
+    .clients-bubble-inner strong {
+      color: var(--red);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+    @keyframes bubble-float {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50%      { transform: scale(1) translateY(-5px); }
+    }
+    .clients-bubble-tail {
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 10px solid #fff;
+    }
+
+    @media (max-width: 640px) {
+      .clients-mascot { width: 50px; height: 70px; }
+      .clients-bubble-inner { font-size: 0.82rem; padding: 0.65rem 0.85rem; }
+    }
+
+    /* ===== SERVICES ===== */
+    #services { background: rgba(17,26,53,0.85); }
+    .services-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      gap: 2rem;
+    }
+    .services-h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff;
+    }
+    .services-h2 em { font-style: italic; color: var(--red); }
+    .services-tagline {
+      max-width: 380px;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--glass-bg);
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s, background 0.25s;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--glass-border);
+      background: var(--glass-bg-strong);
+    }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 3.6rem;
+      color: rgba(255,255,255,0.10);
+      line-height: 1;
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+    .service-icon-wrap {
+      width: 56px; height: 56px;
+      background: rgba(227,25,55,0.18);
+      border: 1px solid rgba(227,25,55,0.35);
+      display: grid; place-items: center;
+      margin-bottom: 1.25rem;
+      color: var(--red);
+      border-radius: var(--radius);
+    }
+    .service-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+    .service-card p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+    .service-card-footer {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ===== SERVICE CARD ANIMATED IMAGE ===== */
+    .service-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg, rgba(0,32,96,0.4) 0%, rgba(11,19,43,0.6) 100%);
+    }
+    .service-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      animation: service-zoom 8s ease-in-out infinite alternate;
+    }
+    .service-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(11,19,43,0.7) 100%);
+      pointer-events: none;
+    }
+    .service-image-wrap .service-icon-float {
+      position: absolute;
+      top: 12px; left: 12px;
+      width: 40px; height: 40px;
+      background: rgba(227,25,55,0.85);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      z-index: 2;
+      animation: float-pulse 3s ease-in-out infinite;
+    }
+    .service-card:hover .service-image-wrap img {
+      animation-duration: 3s;
+    }
+    @keyframes service-zoom {
+      0%   { transform: scale(1) translate(0, 0); }
+      50%  { transform: scale(1.08) translate(-1%, -2%); }
+      100% { transform: scale(1.12) translate(1%, 1%); }
+    }
+    @keyframes float-pulse {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-4px); }
+    }
+
+    /* ===== WHY ===== */
+    #why {
+      background: var(--bg-deep);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    #why::before {
+      content: '';
+      position: absolute;
+      right: -150px; top: -100px;
+      width: 550px; height: 550px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(227,25,55,0.18) 0%, transparent 70%);
+    }
+    #why::after {
+      content: '';
+      position: absolute;
+      left: -150px; bottom: -100px;
+      width: 450px; height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,102,204,0.18) 0%, transparent 70%);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .why-h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: #fff;
+      margin-bottom: 2.5rem;
+    }
+    .why-h2 em { font-style: italic; color: var(--red); }
+    .why-list { display: grid; gap: 1.25rem; list-style: none; }
+    .why-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .why-check {
+      width: 30px; height: 30px;
+      background: var(--red);
+      display: grid; place-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      border-radius: var(--radius);
+    }
+    .why-item-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .why-item-text p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+    }
+    .why-map-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--red);
+      padding: 2rem;
+      margin-bottom: 1rem;
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
+    .why-map-card h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.65rem;
+    }
+    .route-list { list-style: none; display: grid; gap: 0.45rem; }
+    .route-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .route-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* ===== LOCATE ME ===== */
+    #locate {
+      background: var(--bg-mid);
+      position: relative;
+    }
+    .locate-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .locate-map-wrap {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 420px;
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .locate-map-wrap iframe {
+      filter: invert(0.92) hue-rotate(180deg) saturate(0.8) brightness(0.95);
+      /* Dark-theme look for the embedded Google Map so it blends with deep navy */
+    }
+    .locate-info-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-top: 4px solid var(--red);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .locate-info-row {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .locate-info-row > div { flex: 1; }
+
+    @media (max-width: 1024px) {
+      .locate-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .locate-map-wrap { min-height: 320px; }
+    }
+
+    /* ===== DANGEROUS GOODS ===== */
+    #dg {
+      background: var(--bg-mid);
+      position: relative;
+    }
+    .dg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .dg-h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .dg-h2 em { font-style: italic; color: var(--red); }
+    .dg-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+    }
+    .dg-warning {
+      background: rgba(227,25,55,0.12);
+      border: 1px solid rgba(227,25,55,0.35);
+      border-left: 4px solid var(--red);
+      padding: 1.25rem 1.4rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .dg-warning strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+    .dg-warning p {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+    .dg-img-wrap {
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 4px solid rgba(255,255,255,0.10);
+    }
+    .dg-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .dg-img-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,32,96,0.9) 100%);
+      color: #fff;
+      padding: 2rem 1.5rem 1rem;
+    }
+    .dg-img-caption strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .dg-img-caption span {
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+
+    /* ===== CONTACT ===== */
+    #contact { background: rgba(11,19,43,0.85); position: relative; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr;
+      gap: 4rem;
+    }
+    .contact-h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .contact-h2 em { font-style: italic; color: var(--red); }
+    .contact-info-list { display: grid; gap: 1rem; list-style: none; }
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      padding: 1.1rem 1.3rem;
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
+    .contact-info-item:hover { border-color: var(--red); transform: translateX(3px); background: var(--glass-bg-strong); }
+    .contact-icon {
+      color: var(--red);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-info-text {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+    .contact-info-text a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .contact-info-text a:hover { color: var(--red); }
+
+    .contact-form {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-top: 4px solid var(--red);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .form-control {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid var(--line-strong);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      border-radius: var(--radius);
+    }
+    .form-control:focus {
+      border-color: var(--red);
+      background: rgba(255,255,255,0.10);
+      box-shadow: 0 0 0 3px rgba(227,25,55,0.18);
+    }
+    .form-control::placeholder { color: rgba(255,255,255,0.35); }
+    .form-control option { color: #000; }
+    textarea.form-control { min-height: 130px; resize: vertical; }
+    /* SEND MESSAGE BUTTON — NAVY (matches btn-primary, trust + professional) */
+    .form-submit {
+      width: 100%;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 18px rgba(0,32,96,0.40);
+    }
+    .form-submit:hover { background: var(--navy-soft); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,32,96,0.55); }
+    .form-success {
+      display: none;
+      background: rgba(31,157,85,0.1);
+      border: 1px solid rgba(31,157,85,0.3);
+      color: var(--green);
+      padding: 0.9rem 1rem;
+      font-size: 0.88rem;
+      margin-top: 1rem;
+      line-height: 1.6;
+      border-radius: var(--radius);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #050A1A;
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 0 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand {
+      display: inline-block;
+      margin-bottom: 1rem;
+      width: fit-content;
+      position: relative;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .footer-brand img {
+      width: 140px;
+      height: auto;
+      max-height: 60px;
+      object-fit: contain;
+      /* Same elliptical vignette mask as header logo */
+      -webkit-mask-image: radial-gradient(ellipse 65% 70% at center,
+                                #000 45%,
+                                rgba(0,0,0,0.6) 65%,
+                                rgba(0,0,0,0.15) 85%,
+                                transparent 95%);
+      mask-image: radial-gradient(ellipse 65% 70% at center,
+                                #000 45%,
+                                rgba(0,0,0,0.6) 65%,
+                                rgba(0,0,0,0.15) 85%,
+                                transparent 95%);
+      animation: logo-float-subtle 5s ease-in-out infinite;
+    }
+    /* Footer wave overlay (clone of header ribbon wave) */
+    .footer-brand .ribbon-wave-overlay {
+      top: 49%;
+      height: 20%;
+    }
+    .footer-brand:hover img {
+      transform: scale(1.05) rotate(-2deg);
+      filter: drop-shadow(0 4px 12px rgba(227,25,55,0.4));
+    }
+    .footer-brand strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .footer-brand small {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .footer-about {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 360px;
+    }
+    .footer-col h5 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: grid; gap: 0.55rem; }
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--red); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+    }
+    .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+    .footer-tagline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .track-card { max-width: 540px; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-badge { right: 1rem; }
+      .services-head { flex-direction: column; align-items: flex-start; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .dg-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 4.5rem 0; }
+      nav.primary { display: none; }
+      #mobileMenuBtn { display: inline-flex; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-pillars { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .track-result-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-img-badge { position: relative; right: 0; bottom: 0; margin-top: 1rem; }
+      #home { padding: 7rem 0 4rem; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .track-fields { grid-template-columns: 80px 1fr; }
+      .about-img-badge { width: 140px; }
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* ================================================================
+       PREMIUM SIGNATURE LAYER
+       Page loader · Custom cursor · Scroll progress · Noise · Orbs
+       ================================================================ */
+
+    /* ── PAGE LOADER ────────────────────────────────────────── */
+    #pageLoader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(0,102,204,0.15), transparent 60%),
+        var(--bg-deep);
+      display: grid;
+      place-items: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #pageLoader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-inner {
+      text-align: center;
+      transform: translateY(-20px);
+    }
+    .loader-logo {
+      display: flex;
+      gap: 0.15em;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(3.5rem, 9vw, 6rem);
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 1.75rem;
+    }
+    .loader-letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(40px) rotateX(60deg);
+      animation: loader-letter-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      animation-delay: var(--d);
+      background: linear-gradient(180deg, #fff 0%, #c9a14a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes loader-letter-in {
+      to { opacity: 1; transform: translateY(0) rotateX(0); }
+    }
+    .loader-bar {
+      width: 180px;
+      height: 2px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 auto 1rem;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .loader-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--red));
+      animation: loader-fill 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      animation-delay: 0.3s;
+    }
+    @keyframes loader-fill { to { width: 100%; } }
+    .loader-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.74rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: loader-text-in 0.6s ease forwards;
+      animation-delay: 0.6s;
+    }
+    @keyframes loader-text-in { to { opacity: 1; } }
+
+    /* ── CUSTOM CURSOR ──────────────────────────────────────── */
+    #cursorDot, #cursorRing {
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 9998;
+      border-radius: 50%;
+      mix-blend-mode: difference;
+    }
+    #cursorDot {
+      width: 6px; height: 6px;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s ease, width 0.2s, height 0.2s;
+    }
+    #cursorRing {
+      width: 32px; height: 32px;
+      border: 1.5px solid rgba(255,255,255,0.7);
+      transform: translate(-50%, -50%);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                  width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+    }
+    #cursorRing.hovering {
+      width: 56px; height: 56px;
+      background: rgba(201,161,74,0.15);
+      border-color: var(--gold);
+      mix-blend-mode: normal;
+    }
+    #cursorDot.hovering { width: 0; height: 0; }
+    @media (hover: none), (pointer: coarse) {
+      #cursorDot, #cursorRing { display: none; }
+    }
+
+    /* ── SCROLL PROGRESS ────────────────────────────────────── */
+    #scrollProgress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--red) 100%);
+      z-index: 9997;
+      box-shadow: 0 0 10px rgba(201,161,74,0.6);
+    }
+
+    /* ── GLOBAL NOISE / GRAIN ───────────────────────────────── */
+    #noiseOverlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9990;
+      opacity: 0.08;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size: 200px 200px;
+      animation: noise-shift 0.4s steps(4) infinite;
+    }
+    @keyframes noise-shift {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(-5px, 3px); }
+      50%  { transform: translate(4px, -4px); }
+      75%  { transform: translate(-3px, 5px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* ── AMBIENT GLOW ORBS ──────────────────────────────────── */
+    .ambient-orbs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.75;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      top: -180px; left: -120px;
+      background: radial-gradient(circle, rgba(0,102,204,0.55) 0%, transparent 70%);
+      animation: orb-1 22s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 700px; height: 700px;
+      bottom: -250px; right: -180px;
+      background: radial-gradient(circle, rgba(227,25,55,0.38) 0%, transparent 70%);
+      animation: orb-2 28s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 500px; height: 500px;
+      top: 40%; left: 55%;
+      background: radial-gradient(circle, rgba(201,161,74,0.30) 0%, transparent 70%);
+      animation: orb-3 24s ease-in-out infinite;
+    }
+    @keyframes orb-1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%      { transform: translate(80px, 60px) scale(1.15); }
+    }
+    @keyframes orb-2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%      { transform: translate(-60px, -80px) scale(1.1); }
+    }
+    @keyframes orb-3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%      { transform: translate(-100px, 80px) scale(1.2); }
+      66%      { transform: translate(60px, -50px) scale(0.9); }
+    }
+
+    /* ── MAGNETIC BUTTONS ───────────────────────────────────── */
+    .magnetic {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      will-change: transform;
+    }
+
+    /* ── ENHANCED REVEAL — premium choreography ─────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== PAGE LOADER — premium brand reveal ===== -->
+  <div id="pageLoader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-letter" style="--d:0.0s">P</span>
+        <span class="loader-letter" style="--d:0.08s">C</span>
+        <span class="loader-letter" style="--d:0.16s">C</span>
+        <span class="loader-letter" style="--d:0.24s">S</span>
+      </div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <p class="loader-text">Authorised IndiGo Cargo Agent</p>
+    </div>
+  </div>
+
+  <!-- ===== CUSTOM CURSOR — dot + ring ===== -->
+  <div id="cursorDot" aria-hidden="true"></div>
+  <div id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ===== SCROLL PROGRESS — thin gold line at top ===== -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===== GLOBAL NOISE/GRAIN OVERLAY — film warmth ===== -->
+  <div id="noiseOverlay" aria-hidden="true"></div>
+
+  <!-- ===== AMBIENT GLOW ORBS — atmospheric depth ===== -->
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="brand">
+        <div class="brand-logo-wrap">
+          <img src="pccs_logo.png" alt="PCCS – Pradeep Cargo &amp; Courier Service" class="brand-logo" />
+          <!-- Wave animation overlay on red ribbon area -->
+          <svg class="ribbon-wave-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.0"/>
+                <stop offset="50%" stop-color="#ffffff" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <!-- White shimmer that sweeps across ribbon -->
+            <rect x="-30" y="49" width="30" height="20" fill="url(#waveGrad)">
+              <animate attributeName="x" from="-30" to="100" dur="3.2s" repeatCount="indefinite"/>
+            </rect>
+          </svg>
+        </div>
+      </a>
+
+      <nav class="primary" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#dg">Compliance</a>
+        <a href="#locate">Locate Me</a>
+        <a href="#contact">Contact</a>
+        <a href="#track" class="btn-nav">Track Shipment</a>
+      </nav>
+
+      <button id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+        <i data-lucide="menu" style="width:20px;height:20px;"></i>
+      </button>
+    </div>
+    <div id="mobileNav" role="navigation" aria-label="Mobile navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#dg">Compliance</a>
+      <a href="#locate">Locate Me</a>
+      <a href="#contact">Contact</a>
+      <a href="#track">Track Shipment</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-eyebrow reveal">
+              <div class="hero-eyebrow-dot"></div>
+              <span>Authorised IndiGo Cargo Agent · Kolkata</span>
+            </div>
+            <h1 class="display hero-h1 reveal reveal-delay-1">
+              India's Cargo<br>
+              Moves With<br>
+              <em>Precision.</em>
+            </h1>
+            <p class="hero-sub reveal reveal-delay-2">Pradeep Cargo &amp; Courier Service</p>
+            <p class="hero-body reveal reveal-delay-2">
+              Authorised IndiGo Cargo agent providing airport-to-airport service
+              across India — coordinating your shipments via air, rail and road
+              through a single reliable desk. Track IndiGo Cargo AWBs directly on
+              our site — no redirects, no fuss.
+            </p>
+            <div class="hero-ctas reveal reveal-delay-3">
+              <a href="#contact" class="btn-primary">
+                <i data-lucide="send" style="width:16px;height:16px;"></i>
+                Get a Quote
+              </a>
+              <a href="#services" class="btn-secondary">
+                <i data-lucide="layers" style="width:16px;height:16px;"></i>
+                Our Services
+              </a>
+            </div>
+          </div>
+
+          <!-- TRACK CARD -->
+          <div id="track" class="track-card reveal reveal-delay-2">
+            <div class="track-card-head">
+              <p class="track-card-label">Track Your Cargo</p>
+              <span class="track-card-badge">
+                <i data-lucide="shield-check" style="width:11px;height:11px;"></i>
+                IndiGo · 312
+              </span>
+            </div>
+            <p class="track-card-sub">Enter airline prefix &amp; 8-digit AWB number — track inline.</p>
+
+            <form id="trackingForm" autocomplete="off" novalidate>
+              <div class="track-fields">
+                <div class="field-group">
+                  <label class="field-label" for="awbPrefix">Prefix <span class="req">*</span></label>
+                  <input
+                    class="track-input prefix"
+                    id="awbPrefix"
+                    name="awbPrefix"
+                    type="text"
+                    value="312"
+                    maxlength="3"
+                    placeholder="312"
+                    inputmode="numeric"
+                    required
+                  />
+                </div>
+                <div class="field-group">
+                  <label class="field-label" for="awbNumber">AWB Number <span class="req">*</span></label>
+                  <input
+                    class="track-input"
+                    id="awbNumber"
+                    name="awbNumber"
+                    type="text"
+                    maxlength="11"
+                    placeholder="e.g. 01234567"
+                    inputmode="numeric"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button class="track-btn" type="submit" id="trackBtn">
+                <i data-lucide="search" style="width:16px;height:16px;"></i>
+                <span id="trackBtnText">Track Now</span>
+              </button>
+
+              <p class="track-hint">
+                <i data-lucide="info" style="width:13px;height:13px;color:var(--sky);"></i>
+                Prefix defaults to <strong style="color:var(--navy);margin:0 2px;">312</strong> (IndiGo Cargo IATA code). Enter the 8-digit AWB no.
+              </p>
+            </form>
+
+            <!-- INLINE RESULT PANEL -->
+            <div class="track-result" id="trackResult" aria-live="polite"></div>
+
+            <hr class="track-divider" />
+            <div class="track-phones">
+              <p class="label" style="color:var(--muted);font-size:0.66rem;margin-bottom:0.55rem;">Reach Us Directly</p>
+              <a href="tel:9007108089" class="track-phone-item">
+                <i data-lucide="phone" style="width:14px;height:14px;"></i>
+                9007108089
+              </a>
+              <a href="tel:9883319613" class="track-phone-item">
+                <i data-lucide="phone" style="width:14px;height:14px;"></i>
+                9883319613
+              </a>
+              <a href="https://wa.me/919007108089" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                <svg viewBox="0 0 32 32" style="width:16px;height:16px;" aria-hidden="true">
+                  <path fill="currentColor" d="M16.02 4C9.4 4 4.02 9.28 4.02 15.78c0 2.08.56 4.1 1.62 5.88L4 28l6.55-1.6a12.2 12.2 0 0 0 5.47 1.32C22.64 27.72 28 22.44 28 15.94S22.64 4 16.02 4Zm0 21.72c-1.78 0-3.52-.47-5.04-1.36l-.36-.21-3.88.95.97-3.66-.24-.38a9.74 9.74 0 0 1-1.47-5.28C6 10.39 10.49 6 16.02 6S26 10.46 26 15.94s-4.47 9.78-9.98 9.78Zm5.48-7.33c-.3-.15-1.77-.86-2.04-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.46-2.42-1.47-.9-.79-1.5-1.77-1.67-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.59-.92-2.18-.24-.57-.49-.49-.67-.5h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1-1.04 2.43s1.07 2.82 1.22 3.02c.15.2 2.1 3.14 5.1 4.4.71.3 1.27.48 1.7.61.72.22 1.37.19 1.89.12.58-.08 1.77-.71 2.02-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35Z"/>
+                </svg>
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS RIBBON ===== -->
+    <div class="stats-ribbon">
+      <div class="container" style="padding-left:0;padding-right:0;max-width:100%;">
+        <div class="stats-inner">
+          <div class="stat-item">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Years of Service</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Transport Modes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">PAN</div>
+            <div class="stat-label">India Reach</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Cargo Coordination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="section-eyebrow reveal">
+              <div class="section-eyebrow-line"></div>
+              <span>About Us</span>
+            </div>
+            <h2 class="display about-h2 reveal">Authorised IndiGo Cargo <em>Agent Since 2018</em></h2>
+            <p class="about-body reveal">
+              PRADEEP CARGO &amp; COURIER SERVICE is an authorised IndiGo Cargo agent
+              based in Kolkata, providing airport-to-airport cargo movement and
+              multi-modal freight coordination across India. Logistics companies
+              trust us as their single-window partner — we route their shipments
+              through the optimal medium (air via IndiGo Cargo, rail via Indian
+              Railways, or road via interstate truck networks), handle all AWB / LR
+              documentation, and track every consignment end-to-end. Our team's
+              deep operational knowledge of airline cargo workflows, IndiGo's AWB
+              system, railway freight scheduling and surface transport permits
+              means you don't have to navigate the complexity alone.
+            </p>
+            <div class="about-pillars reveal">
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
+                </div>
+                <strong>Trusted &amp; Certified</strong>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <i data-lucide="map" style="width:18px;height:18px;"></i>
+                </div>
+                <strong>PAN India Coverage</strong>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <i data-lucide="clock" style="width:18px;height:18px;"></i>
+                </div>
+                <strong>On-Time Delivery</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual reveal">
+            <div class="about-img-wrap indigo-anim">
+              <img
+                src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=900&q=80"
+                alt="IndiGo aircraft — air cargo operations"
+                loading="lazy"
+              />
+              <div class="indigo-overlay">
+                <div class="indigo-badge">
+                  <i data-lucide="plane" style="width:18px;height:18px;"></i>
+                  <span>IndiGo Air Cargo</span>
+                </div>
+                <div class="indigo-route">
+                  <span>CCU</span>
+                  <div class="indigo-dashed-line">
+                    <i data-lucide="plane" style="width:16px;height:16px;color:var(--red);"></i>
+                  </div>
+                  <span>DEL</span>
+                </div>
+              </div>
+              <div class="about-img-badge">
+                <strong>2018</strong>
+                <span>Established in Kolkata</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARRIER NETWORK — Transport mediums PCCS partners with ===== -->
+    <section id="carriers">
+      <div class="container">
+        <div class="carriers-wrap">
+          <div class="carriers-head reveal">
+            <div class="carriers-eyebrow">
+              <div class="carriers-eyebrow-line"></div>
+              <span>Carrier Network</span>
+            </div>
+            <h2 class="carriers-h2">Three Mediums.<br><em>One Single Window.</em></h2>
+            <p class="carriers-body">
+              As an authorised IndiGo Cargo agent, we route your shipments through
+              the optimal transport medium — air, rail or road — based on your
+              timeline, budget and destination. You deal with one desk; we
+              coordinate with the carriers.
+            </p>
+          </div>
+
+          <div class="carriers-grid">
+            <!-- Air carrier — IndiGo Cargo -->
+            <article class="carrier-card reveal reveal-delay-1">
+              <span class="carrier-card-badge">Authorised Agent</span>
+              <div class="carrier-card-icon">
+                <i data-lucide="plane" style="width:22px;height:22px;"></i>
+              </div>
+              <h3 class="carrier-card-name">IndiGo Cargo</h3>
+              <p class="carrier-card-mode">Air Medium · Airport-to-Airport</p>
+              <p class="carrier-card-desc">
+                Domestic air cargo via IndiGo's network. AWB-based booking,
+                priority uplift, real-time tracking. IATA prefix 312.
+              </p>
+            </article>
+
+            <!-- Rail carrier — Indian Railways -->
+            <article class="carrier-card reveal reveal-delay-2">
+              <span class="carrier-card-badge">Partner Network</span>
+              <div class="carrier-card-icon">
+                <i data-lucide="train-front" style="width:22px;height:22px;"></i>
+              </div>
+              <h3 class="carrier-card-name">Indian Railways</h3>
+              <p class="carrier-card-mode">Rail Medium · Long-Haul Bulk</p>
+              <p class="carrier-card-desc">
+                Scheduled rail freight for heavy / voluminous cargo.
+                Terminal-to-terminal coordination with full LR documentation.
+              </p>
+            </article>
+
+            <!-- Road carrier — Interstate Truck Network -->
+            <article class="carrier-card reveal reveal-delay-3">
+              <span class="carrier-card-badge">Partner Network</span>
+              <div class="carrier-card-icon">
+                <i data-lucide="truck" style="width:22px;height:22px;"></i>
+              </div>
+              <h3 class="carrier-card-name">Road Network</h3>
+              <p class="carrier-card-mode">Surface Medium · FTL &amp; LTL</p>
+              <p class="carrier-card-desc">
+                Interstate truck network for regional and long-haul surface
+                cargo. Flexible load sizes, daily dispatches, full LR paperwork.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUSTED CLIENTS — Premium dedicated section ===== -->
+    <section id="clients">
+      <div class="container">
+        <div class="clients-head reveal">
+          <div class="clients-eyebrow">
+            <div class="clients-eyebrow-line"></div>
+            <span>Trusted Partners</span>
+            <div class="clients-eyebrow-line"></div>
+          </div>
+          <h2 class="clients-h2">Industry Leaders Who <em>Trust PCCS</em></h2>
+          <p class="clients-sub">
+            We are honoured to serve India's most respected cargo, aviation and logistics
+            organisations — handling their time-critical shipments with the reliability,
+            compliance and discretion their brand demands.
+          </p>
+        </div>
+
+        <div class="clients-grid">
+          <!-- 1. TEMPCON EXPRESS -->
+          <article class="client-card reveal">
+            <span class="client-card-num">01</span>
+            <div class="client-card-icon">
+              <i data-lucide="thermometer-snowflake" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">TEMPCON EXPRESS</h3>
+            <p class="client-card-tag">Temperature-Controlled Logistics</p>
+            <p class="client-card-desc">
+              Specialised cold-chain cargo partner — pharmaceuticals, perishables and
+              sensitive consignments moved with maintained temperature integrity.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Cold-Chain Client</span>
+            </div>
+          </article>
+
+          <!-- 2. SMA LOGISTICS -->
+          <article class="client-card reveal reveal-delay-1">
+            <span class="client-card-num">02</span>
+            <div class="client-card-icon">
+              <i data-lucide="truck" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">SMA LOGISTICS</h3>
+            <p class="client-card-tag">Pvt Ltd · Surface Cargo</p>
+            <p class="client-card-desc">
+              Interstate surface logistics partner — scheduled truck-load and
+              less-than-truckload movement with full LR documentation.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Surface Client</span>
+            </div>
+          </article>
+
+          <!-- 3. YOGAYOG COURIER -->
+          <article class="client-card reveal reveal-delay-2">
+            <span class="client-card-num">03</span>
+            <div class="client-card-icon">
+              <i data-lucide="package" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">Yogayog Courier</h3>
+            <p class="client-card-tag">Pvt Ltd · Last-Mile Parcel</p>
+            <p class="client-card-desc">
+              Regional parcel and courier network — consolidated dispatches,
+              last-mile delivery and reverse logistics across eastern India.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Parcel Client</span>
+            </div>
+          </article>
+
+          <!-- 4. AS LOGISTICS & CARGO -->
+          <article class="client-card reveal">
+            <span class="client-card-num">04</span>
+            <div class="client-card-icon">
+              <i data-lucide="boxes" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">AS LOGISTICS</h3>
+            <p class="client-card-tag">&amp; Cargo Solutions</p>
+            <p class="client-card-desc">
+              End-to-end cargo solutions partner — multi-modal coordination,
+              warehousing support and project cargo movement.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Cargo Client</span>
+            </div>
+          </article>
+
+          <!-- 5. IWAY LOGISTICS -->
+          <article class="client-card reveal reveal-delay-1">
+            <span class="client-card-num">05</span>
+            <div class="client-card-icon">
+              <i data-lucide="route" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">IWAY LOGISTICS</h3>
+            <p class="client-card-tag">Services Pvt Ltd</p>
+            <p class="client-card-desc">
+              Network routing and consolidated freight services — optimised
+              lane allocation and scheduled dispatch management.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Freight Client</span>
+            </div>
+          </article>
+
+          <!-- 6. EASTERN EXPRESS -->
+          <article class="client-card reveal reveal-delay-2">
+            <span class="client-card-num">06</span>
+            <div class="client-card-icon">
+              <i data-lucide="zap" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">EASTERN EXPRESS</h3>
+            <p class="client-card-tag">Express Delivery · East India</p>
+            <p class="client-card-desc">
+              Time-critical express delivery partner serving the eastern corridor —
+              priority handling and same-day dispatch coordination.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Express Client</span>
+            </div>
+          </article>
+
+          <!-- 7. MARUTI LOGISTICS -->
+          <article class="client-card reveal">
+            <span class="client-card-num">07</span>
+            <div class="client-card-icon">
+              <i data-lucide="warehouse" style="width:22px;height:22px;"></i>
+            </div>
+            <h3 class="client-card-name">Maruti Logistics</h3>
+            <p class="client-card-tag">Solutions · Warehousing</p>
+            <p class="client-card-desc">
+              Warehousing and inventory-led logistics partner — bonded storage,
+              distribution and supply-chain coordination services.
+            </p>
+            <div class="client-card-stat">
+              <span class="client-card-stat-num">Active</span>
+              <span class="client-card-stat-label">Warehouse Client</span>
+            </div>
+          </article>
+
+          <!-- 8. CTA — Become a Partner -->
+          <article class="client-card-cta reveal reveal-delay-1">
+            <div class="client-card-cta-icon">
+              <i data-lucide="plus" style="width:24px;height:24px;"></i>
+            </div>
+            <h3 class="client-card-cta-title">Your Brand Here</h3>
+            <p class="client-card-cta-text">
+              Join the league of India's trusted cargo partners. Let PCCS handle
+              your shipments with the same reliability.
+            </p>
+            <a href="#contact" class="client-card-cta-link">
+              Become a Partner
+              <i data-lucide="arrow-right" style="width:13px;height:13px;"></i>
+            </a>
+          </article>
+        </div>
+
+        <!-- ===== ANIMATED MASCOT — walks across cards, invites visitor ===== -->
+        <div class="clients-mascot walking" aria-hidden="true">
+          <svg class="mascot-svg" viewBox="0 0 80 110">
+            <!-- Ground shadow -->
+            <ellipse cx="40" cy="106" rx="18" ry="2.5" fill="rgba(0,0,0,0.35)"/>
+            <!-- Left leg (animated) -->
+            <g class="m-leg-left">
+              <rect x="30" y="66" width="7" height="28" rx="3" fill="#0a1530"/>
+              <ellipse cx="33" cy="96" rx="5" ry="2.5" fill="#1a1a1a"/>
+            </g>
+            <!-- Right leg (animated) -->
+            <g class="m-leg-right">
+              <rect x="43" y="66" width="7" height="28" rx="3" fill="#0a1530"/>
+              <ellipse cx="47" cy="96" rx="5" ry="2.5" fill="#1a1a1a"/>
+            </g>
+            <!-- Body group (bobs up/down) -->
+            <g class="m-body">
+              <!-- Torso / uniform -->
+              <rect x="26" y="36" width="28" height="32" rx="5" fill="#002060"/>
+              <rect x="26" y="36" width="28" height="5" rx="2.5" fill="#0a2c7a"/>
+              <!-- Pocket -->
+              <rect x="35" y="47" width="10" height="9" rx="1" fill="none" stroke="#c9a14a" stroke-width="0.8"/>
+              <!-- Belt -->
+              <rect x="26" y="60" width="28" height="3" fill="#1a1a1a"/>
+              <rect x="38" y="59" width="4" height="5" rx="1" fill="#c9a14a"/>
+              <!-- Left arm -->
+              <rect x="20" y="38" width="6" height="20" rx="3" fill="#002060"/>
+              <circle cx="23" cy="59" r="3" fill="#FBCFB4"/>
+              <!-- Neck -->
+              <rect x="36" y="32" width="8" height="6" fill="#FBCFB4"/>
+              <!-- Head -->
+              <circle cx="40" cy="22" r="11" fill="#FBCFB4"/>
+              <circle cx="29" cy="23" r="2.5" fill="#FBCFB4"/>
+              <circle cx="51" cy="23" r="2.5" fill="#FBCFB4"/>
+              <!-- Cap -->
+              <path d="M29 18 Q40 6 51 18 L51 20 L29 20 Z" fill="#E31937"/>
+              <ellipse cx="40" cy="18" rx="11" ry="2" fill="#b8122c"/>
+              <circle cx="40" cy="15" r="3" fill="#fff"/>
+              <text x="40" y="17" font-size="4.5" text-anchor="middle" fill="#E31937" font-weight="bold" font-family="Arial">P</text>
+              <!-- Eyes -->
+              <circle cx="36" cy="23" r="1.3" fill="#1a1a1a"/>
+              <circle cx="44" cy="23" r="1.3" fill="#1a1a1a"/>
+              <circle cx="36.4" cy="22.6" r="0.4" fill="#fff"/>
+              <circle cx="44.4" cy="22.6" r="0.4" fill="#fff"/>
+              <!-- Smile -->
+              <path d="M36 27 Q40 30 44 27" stroke="#1a1a1a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- Cheeks -->
+              <circle cx="33" cy="26" r="1.5" fill="#F4A8A0" opacity="0.6"/>
+              <circle cx="47" cy="26" r="1.5" fill="#F4A8A0" opacity="0.6"/>
+            </g>
+            <!-- Right arm + package (separate for pointing animation) -->
+            <g class="m-arm-right">
+              <rect x="54" y="38" width="6" height="18" rx="3" fill="#002060"/>
+              <circle cx="57" cy="57" r="3" fill="#FBCFB4"/>
+              <rect x="54" y="42" width="14" height="14" rx="1" fill="#c9a14a" stroke="#8a6f33" stroke-width="0.8"/>
+              <line x1="54" y1="49" x2="68" y2="49" stroke="#8a6f33" stroke-width="0.5"/>
+              <line x1="61" y1="42" x2="61" y2="56" stroke="#8a6f33" stroke-width="0.5"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Speech bubble -->
+        <div class="clients-bubble" aria-hidden="true">
+          <div class="clients-bubble-inner">
+            <p>Come, let's work together<br>and be a part of our<br><strong>trusted clients!</strong></p>
+          </div>
+          <div class="clients-bubble-tail"></div>
+        </div>
+
+        <!-- Trust stats row -->
+        <div class="clients-trust-row reveal reveal-delay-2">
+          <div class="clients-trust-item">
+            <div class="clients-trust-num">7+</div>
+            <div class="clients-trust-label">Logistics Clients</div>
+          </div>
+          <div class="clients-trust-item">
+            <div class="clients-trust-num">3</div>
+            <div class="clients-trust-label">Transport Mediums</div>
+          </div>
+          <div class="clients-trust-item">
+            <div class="clients-trust-num">7+</div>
+            <div class="clients-trust-label">Years as Agent</div>
+          </div>
+          <div class="clients-trust-item">
+            <div class="clients-trust-num">100%</div>
+            <div class="clients-trust-label">IATA DG Compliance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="services-head">
+          <div>
+            <div class="section-eyebrow reveal">
+              <div class="section-eyebrow-line"></div>
+              <span>Services</span>
+            </div>
+            <h2 class="display services-h2 reveal">Cargo Solutions<br>Built For <em>Speed</em></h2>
+          </div>
+          <p class="services-tagline reveal">
+            Choose the movement channel that fits your schedule, budget and destination — we handle the rest, from paperwork to last-mile coordination.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-num">01</div>
+            <div class="service-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=800&q=80"
+                alt="Air freight — cargo aircraft in flight"
+                loading="lazy"
+              />
+              <div class="service-icon-float">
+                <i data-lucide="plane" style="width:20px;height:20px;"></i>
+              </div>
+            </div>
+            <h3>Air Freight</h3>
+            <p>As an authorised IndiGo Cargo agent, we provide airport-to-airport AWB-based cargo service — priority booking, full documentation, and end-to-end tracking on IndiGo's domestic network. The fastest medium for time-critical shipments.</p>
+            <div class="service-card-footer">
+              <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              Fastest Delivery Option
+            </div>
+          </article>
+
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-num">02</div>
+            <div class="service-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80"
+                alt="Road cargo — truck on highway"
+                loading="lazy"
+              />
+              <div class="service-icon-float">
+                <i data-lucide="truck" style="width:20px;height:20px;"></i>
+              </div>
+            </div>
+            <h3>Road Cargo</h3>
+            <p>Surface cargo via our partnered interstate truck network — daily dispatches, flexible load sizes (FTL / LTL) and full LR documentation. The most flexible medium for regional and long-haul consignments of every scale.</p>
+            <div class="service-card-footer">
+              <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              Most Flexible Routing
+            </div>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-num">03</div>
+            <div class="service-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80"
+                alt="Rail cargo — freight train on tracks"
+                loading="lazy"
+              />
+              <div class="service-icon-float">
+                <i data-lucide="train-front" style="width:20px;height:20px;"></i>
+              </div>
+            </div>
+            <h3>Rail Cargo</h3>
+            <p>Bulk cargo movement via Indian Railways — scheduled long-haul service ideal for heavy, voluminous consignments. We coordinate terminal-to-terminal booking, loading and LR paperwork for cost-effective transit.</p>
+            <div class="service-card-footer">
+              <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+              Best for Bulk Loads
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY PCCS ===== -->
+    <section id="why" class="section">
+      <div class="container">
+        <div class="why-grid">
+          <div>
+            <div class="section-eyebrow reveal">
+              <div class="section-eyebrow-line"></div>
+              <span style="color:var(--red);">Why Choose Us</span>
+            </div>
+            <h2 class="display why-h2 reveal">The PCCS <em>Difference</em></h2>
+            <ul class="why-list">
+              <li class="why-item reveal">
+                <div class="why-check">
+                  <i data-lucide="check" style="width:14px;height:14px;color:#fff;"></i>
+                </div>
+                <div class="why-item-text">
+                  <strong>Single Point of Contact</strong>
+                  <p>One dedicated cargo desk handles your shipment from booking to delivery — no runaround, no confusion.</p>
+                </div>
+              </li>
+              <li class="why-item reveal reveal-delay-1">
+                <div class="why-check">
+                  <i data-lucide="check" style="width:14px;height:14px;color:#fff;"></i>
+                </div>
+                <div class="why-item-text">
+                  <strong>Multi-Modal Flexibility</strong>
+                  <p>Air, road or rail — we select the optimal channel for your timeline and budget without compromise.</p>
+                </div>
+              </li>
+              <li class="why-item reveal reveal-delay-2">
+                <div class="why-check">
+                  <i data-lucide="check" style="width:14px;height:14px;color:#fff;"></i>
+                </div>
+                <div class="why-item-text">
+                  <strong>Transparent Documentation</strong>
+                  <p>Every consignment gets full paperwork — AWB, LR and POD — so you always have proof of movement.</p>
+                </div>
+              </li>
+              <li class="why-item reveal reveal-delay-3">
+                <div class="why-check">
+                  <i data-lucide="check" style="width:14px;height:14px;color:#fff;"></i>
+                </div>
+                <div class="why-item-text">
+                  <strong>Kolkata-Based, Nationally Connected</strong>
+                  <p>Headquartered in Dum Dum with direct links to airports, rail yards and road hubs across India.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <div class="why-map-card">
+              <h4>Operating Hours</h4>
+              <ul class="route-list">
+                <li><div class="route-dot"></div> Monday – Saturday: 10:00 AM – 6:00 PM</li>
+                <li><div class="route-dot"></div> Cargo inquiries: All days via WhatsApp</li>
+                <li><div class="route-dot"></div> Emergency pickups by prior arrangement</li>
+              </ul>
+            </div>
+            <div class="why-map-card">
+              <h4>Key Routes We Serve</h4>
+              <ul class="route-list">
+                <li><div class="route-dot"></div> Kolkata → Delhi / Mumbai / Chennai</li>
+                <li><div class="route-dot"></div> Kolkata → Bangalore / Hyderabad</li>
+                <li><div class="route-dot"></div> Kolkata → Northeast India Corridor</li>
+                <li><div class="route-dot"></div> Pan-India via partner network</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;background:var(--sky);box-shadow:0 6px 18px rgba(0,102,204,0.35);">
+              <i data-lucide="phone-call" style="width:16px;height:16px;"></i>
+              Speak with Our Cargo Desk
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DANGEROUS GOODS COMPLIANCE ===== -->
+    <section id="dg" class="section">
+      <div class="container">
+        <div class="dg-grid">
+          <div class="dg-img-wrap reveal">
+            <img src="dg_goods.png" alt="Dangerous Goods declaration poster — IATA compliance" loading="lazy" />
+            <div class="dg-img-caption">
+              <strong>Declare It. Always.</strong>
+              <span>IATA Dangerous Goods Regulations · Aircraft Act 1934</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-eyebrow reveal">
+              <div class="section-eyebrow-line"></div>
+              <span>Compliance</span>
+            </div>
+            <h2 class="display dg-h2 reveal">Dangerous Goods — <em>Declared &amp; Documented</em></h2>
+            <p class="dg-body reveal">
+              Carrying undeclared dangerous goods by air is a serious offence under the Aircraft Act 1934 and the Carriage of Dangerous Goods Rules 2003. At PCCS, we pre-screen every consignment against IATA's Dangerous Goods Regulations (DGR) to ensure your shipment is fully compliant, properly declared and accepted by the carrier without delay.
+            </p>
+
+            <div class="dg-warning reveal">
+              <strong>What cannot travel undeclared</strong>
+              <p>Flammable liquids &amp; solids, compressed gases, lithium batteries above limits, oxidizers, toxic/infectious substances, radioactive material, corrosives and explosives. When in doubt, ask our cargo desk before booking — we'll classify, pack and document correctly.</p>
+            </div>
+
+            <a href="#contact" class="btn-primary reveal reveal-delay-1">
+              <i data-lucide="shield-question" style="width:16px;height:16px;"></i>
+              Ask About DG Classification
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOCATE ME ===== -->
+    <section id="locate" class="section">
+      <div class="container">
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span>Locate Me</span>
+        </div>
+        <h2 class="display about-h2 reveal" style="color:#fff;margin-bottom:1rem;">Find <em>Our Office</em> on Map</h2>
+        <p class="about-body reveal" style="color:var(--ink-soft);max-width:680px;margin-bottom:2rem;">
+          Visit our Kolkata office in Dum Dum — centrally located with quick access to the airport, railhead, and major road corridors. Click the map to open in Google Maps with turn-by-turn directions.
+        </p>
+
+        <div class="locate-grid reveal">
+          <div class="locate-map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=22.650516365685622,88.42960647105507&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0; min-height:380px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="PCCS Office Location — Kolkata"
+            ></iframe>
+          </div>
+
+          <div class="locate-info-card">
+            <div class="locate-info-row">
+              <i data-lucide="map-pin" style="color:var(--red);width:20px;height:20px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <p class="track-meta-label" style="margin-bottom:0.25rem;">Address</p>
+                <p style="font-size:0.95rem;color:var(--ink);line-height:1.55;">
+                  52/4/D/S-2, Ramkrishnagarh Road,<br>
+                  Dum Dum, Kolkata – 700079
+                </p>
+              </div>
+            </div>
+            <div class="locate-info-row">
+              <i data-lucide="navigation" style="color:var(--sky);width:20px;height:20px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <p class="track-meta-label" style="margin-bottom:0.25rem;">Coordinates</p>
+                <p style="font-size:0.9rem;color:var(--ink);font-family:'JetBrains Mono', monospace;">
+                  22.650516, 88.429606
+                </p>
+              </div>
+            </div>
+            <div class="locate-info-row">
+              <i data-lucide="smartphone" style="color:var(--red);width:20px;height:20px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <p class="track-meta-label" style="margin-bottom:0.25rem;">Call Us</p>
+                <p style="font-size:0.95rem;color:var(--ink);">
+                  <a href="tel:9007108089" style="color:var(--ink);text-decoration:none;">9007108089</a> ·
+                  <a href="tel:9883319613" style="color:var(--ink);text-decoration:none;">9883319613</a>
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=22.650516365685622,88.42960647105507"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+              style="width:100%;justify-content:center;margin-top:0.5rem;background:var(--sky);box-shadow:0 6px 18px rgba(0,102,204,0.35);"
+            >
+              <i data-lucide="navigation" style="width:16px;height:16px;"></i>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <div class="section-eyebrow reveal">
+              <div class="section-eyebrow-line"></div>
+              <span>Contact Us</span>
+            </div>
+            <h2 class="display contact-h2 reveal">Speak With<br>Our <em>Cargo Desk</em></h2>
+
+            <ul class="contact-info-list">
+              <li class="contact-info-item reveal">
+                <i data-lucide="map-pin" class="contact-icon" style="width:18px;height:18px;"></i>
+                <div class="contact-info-text">
+                  52/4/D/S-2, Ramkrishnagarh Road,<br>
+                  Dum Dum, Kolkata – 700079
+                </div>
+              </li>
+              <li class="contact-info-item reveal reveal-delay-1">
+                <i data-lucide="smartphone" class="contact-icon" style="width:18px;height:18px;"></i>
+                <div class="contact-info-text">
+                  <a href="tel:9007108089">9007108089</a> &nbsp;|&nbsp; <a href="tel:9883319613">9883319613</a>
+                  <br>
+                  <a href="https://wa.me/919007108089" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                    <svg viewBox="0 0 32 32" style="width:15px;height:15px;" aria-hidden="true">
+                      <path fill="currentColor" d="M16.02 4C9.4 4 4.02 9.28 4.02 15.78c0 2.08.56 4.1 1.62 5.88L4 28l6.55-1.6a12.2 12.2 0 0 0 5.47 1.32C22.64 27.72 28 22.44 28 15.94S22.64 4 16.02 4Zm0 21.72c-1.78 0-3.52-.47-5.04-1.36l-.36-.21-3.88.95.97-3.66-.24-.38a9.74 9.74 0 0 1-1.47-5.28C6 10.39 10.49 6 16.02 6S26 10.46 26 15.94s-4.47 9.78-9.98 9.78Zm5.48-7.33c-.3-.15-1.77-.86-2.04-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.46-2.42-1.47-.9-.79-1.5-1.77-1.67-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.59-.92-2.18-.24-.57-.49-.49-.67-.5h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1-1.04 2.43s1.07 2.82 1.22 3.02c.15.2 2.1 3.14 5.1 4.4.71.3 1.27.48 1.7.61.72.22 1.37.19 1.89.12.58-.08 1.77-.71 2.02-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35Z"/>
+                    </svg>
+                    WhatsApp: 9007108089
+                  </a>
+                </div>
+              </li>
+              <li class="contact-info-item reveal reveal-delay-2">
+                <i data-lucide="mail" class="contact-icon" style="width:18px;height:18px;"></i>
+                <div class="contact-info-text">
+                  <a href="mailto:pccs.ccu@gmail.com">pccs.ccu@gmail.com</a><br>
+                  <a href="mailto:pccs.ccu@pradeepcargo.com">pccs.ccu@pradeepcargo.com</a>
+                </div>
+              </li>
+              <li class="contact-info-item reveal reveal-delay-2">
+                <i data-lucide="clock-3" class="contact-icon" style="width:18px;height:18px;"></i>
+                <div class="contact-info-text">Monday – Saturday: 10:00 AM – 6:00 PM</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form reveal reveal-delay-1">
+            <p class="section-eyebrow" style="margin-bottom:1.25rem;">
+              <span style="color:var(--red);">Send Us a Message</span>
+            </p>
+            <form id="contactForm"
+                  action="https://formsubmit.co/pccs.ccu@gmail.com"
+                  method="POST"
+                  enctype="application/x-www-form-urlencoded">
+              <!-- FormSubmit.co hidden config -->
+              <input type="hidden" name="_subject" value="New inquiry from PCCS website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="#contact?sent=1" />
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name</label>
+                  <input class="form-control" id="name" name="name" type="text" placeholder="Rahul Sharma" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input class="form-control" id="email" name="email" type="email" placeholder="rahul@company.com" autocomplete="email" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number</label>
+                  <input class="form-control" id="phone" name="phone" type="tel" placeholder="+91 99999 00000" autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="service">Service Type</label>
+                  <select class="form-control" id="service" name="service" style="cursor:pointer;">
+                    <option value="">Select service...</option>
+                    <option>Air Freight</option>
+                    <option>Road Cargo</option>
+                    <option>Rail Cargo</option>
+                    <option>Dangerous Goods Inquiry</option>
+                    <option>General Inquiry</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label class="form-label" for="message">Your Message</label>
+                <textarea class="form-control" id="message" name="message" placeholder="Tell us about your cargo requirements — origin, destination, weight, timeline..." required></textarea>
+              </div>
+              <button class="form-submit" type="submit">
+                <i data-lucide="send-horizontal" style="width:16px;height:16px;"></i>
+                Send Message
+              </button>
+              <p id="contactSuccess" class="form-success">Thank you! We've received your message and will reach out within one business day.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="pccs_logo.png" alt="PCCS – Pradeep Cargo &amp; Courier Service" />
+            <svg class="ribbon-wave-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <rect x="-30" y="49" width="30" height="20" fill="url(#waveGrad)">
+                <animate attributeName="x" from="-30" to="100" dur="3.2s" repeatCount="indefinite"/>
+              </rect>
+            </svg>
+          </div>
+          <p class="footer-about">
+            Premier cargo &amp; courier service from Kolkata, India. Air, road and rail logistics with full AWB tracking and IATA dangerous-goods compliance — trusted since 2018.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#dg">DG Compliance</a></li>
+            <li><a href="#locate">Locate Me</a></li>
+            <li><a href="#track">Track Shipment</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Get In Touch</h5>
+          <ul>
+            <li><a href="tel:9007108089">9007108089</a></li>
+            <li><a href="tel:9883319613">9883319613</a></li>
+            <li><a href="mailto:pccs.ccu@gmail.com">pccs.ccu@gmail.com</a></li>
+            <li><a href="https://wa.me/919007108089" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li>Dum Dum, Kolkata – 700079</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Pradeep Cargo &amp; Courier Service. All rights reserved.</p>
+        <p class="footer-tagline">Fast &amp; Reliable · Kolkata · India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       ICONS + MOBILE MENU
+       ========================================================= */
+    lucide.createIcons();
+
+    const menuBtn   = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.style.display === 'flex';
+      mobileNav.style.display = isOpen ? 'none' : 'flex';
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.style.display = 'none';
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* Header shadow on scroll */
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    /* =========================================================
+       TRACKING FORM — DEMO MODE
+       (UI complete; live backend will be wired in later.
+        For now, shows a realistic sample tracking result so the
+        design and flow can be reviewed end-to-end without any
+        server or Python backend.)
+       ========================================================= */
+    const prefixInput = document.getElementById('awbPrefix');
+    const numberInput = document.getElementById('awbNumber');
+    const trackBtn    = document.getElementById('trackBtn');
+    const trackBtnTxt = document.getElementById('trackBtnText');
+    const resultBox   = document.getElementById('trackResult');
+
+    /* Force prefix to digits only, max 3 chars (IATA airline prefix, e.g. 312 = IndiGo) */
+    prefixInput.addEventListener('input', e => {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 3);
+    });
+
+    /* AWB number: digits only, max 8 */
+    numberInput.addEventListener('input', e => {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 8);
+    });
+
+    /* Pressing Enter in prefix moves focus to number */
+    prefixInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); numberInput.focus(); }
+    });
+
+    /* ---------------------------------------------------------
+       Helpers
+       --------------------------------------------------------- */
+    function classifyStatus(statusText) {
+      const s = (statusText || '').toLowerCase();
+      if (s.includes('deliver'))                              return { cls: 'delivered', label: 'Delivered',  icon: 'package-check' };
+      if (s.includes('arriv') || s.includes('rcf') || s.includes('offload')) return { cls: 'transit',   label: 'Arrived',     icon: 'plane-landing' };
+      if (s.includes('depart') || s.includes('transit') || s.includes('manifest') || s.includes('uplift') || s.includes('dep')) return { cls: 'transit', label: 'In Transit', icon: 'plane' };
+      if (s.includes('accept') || s.includes('rcs'))          return { cls: 'booked',    label: 'Accepted',   icon: 'check-circle' };
+      if (s.includes('booked'))                               return { cls: 'booked',    label: 'Booked',     icon: 'clipboard-list' };
+      if (s.includes('hold') || s.includes('pending'))        return { cls: 'error',     label: 'On Hold',    icon: 'pause-circle' };
+      return { cls: 'transit', label: statusText || 'Unknown', icon: 'plane' };
+    }
+
+    function safe(v, fallback = '—') {
+      if (v === null || v === undefined || v === '' || v === 'N/A') return fallback;
+      return v;
+    }
+
+    function fmtWeight(w) {
+      if (w === null || w === undefined) return '—';
+      return `${Number(w).toFixed(1)} kg`;
+    }
+
+    /* ---------------------------------------------------------
+       Render the tracking result panel (UI complete; uses sample
+       data for now. When live backend is wired in, replace the
+       data object in handleSubmit with the real fetch response.)
+       --------------------------------------------------------- */
+    function renderResult(data) {
+      const fullAwb   = data.awb;
+      const route     = safe(data.route, 'N/A');
+      const lastStat  = safe(data.status, 'N/A');
+      const lastDt    = safe(data.datetime, '');
+      const cls       = classifyStatus(lastStat);
+
+      const allRows = [
+        ...(data.booking_rows || []),
+        ...(data.milestones   || []),
+      ];
+
+      // Pull pcs/weight/flight/org/dest from latest row that has them
+      let pcs = null, weight = null, flightNo = '', org = '', dest = '';
+      for (const r of [...(data.milestones||[]), ...(data.booking_rows||[])]) {
+        if (pcs === null && r.pcs !== null && r.pcs !== undefined) pcs = r.pcs;
+        if (weight === null && r.weight !== null && r.weight !== undefined) weight = r.weight;
+        if (!flightNo && r.flight) flightNo = r.flight;
+        if (!org && r.org) org = r.org;
+        if (!dest && (r.dest || r.destination)) dest = r.dest || r.destination;
+      }
+
+      // Route fallback: parse XXX-YYY format
+      let originStr = safe(org), destStr = safe(dest);
+      if (route && route !== 'N/A' && route.includes('-')) {
+        const parts = route.split('-');
+        if (!originStr || originStr === '—') originStr = parts[0];
+        if (!destStr || destStr === '—') destStr = parts[1];
+      }
+
+      // Timeline
+      const timelineHtml = allRows.length === 0
+        ? `<li class="track-step pending"><div class="track-step-title">No milestone history available</div><div class="track-step-meta">—</div></li>`
+        : allRows.map((r, i) => {
+            const isLast = i === allRows.length - 1;
+            const stCls  = isLast ? 'active' : 'done';
+            const mTitle = safe(r.milestone, '—');
+            const mMeta  = [r.station, r.flight, r.event_datetime]
+              .filter(x => x && x !== '—').join(' · ') || '—';
+            const hasPcs = (r.pcs !== null && r.pcs !== undefined);
+            const hasWt  = (r.weight !== null && r.weight !== undefined);
+            const pcsW   = (hasPcs || hasWt)
+              ? ` · ${hasPcs ? r.pcs : '?'} pcs / ${hasWt ? Number(r.weight).toFixed(1) : '?'} kg`
+              : '';
+            return `
+              <li class="track-step ${stCls}">
+                <div class="track-step-title">${mTitle}${pcsW}</div>
+                <div class="track-step-meta">${mMeta}</div>
+              </li>`;
+          }).join('');
+
+      resultBox.innerHTML = `
+        <div class="track-result-head">
+          <div>
+            <div class="track-meta-label" style="margin-bottom:0.25rem;">Air Waybill</div>
+            <div class="track-result-awb">${fullAwb}</div>
+          </div>
+          <span class="track-result-status ${cls.cls}">
+            <i data-lucide="${cls.icon}" style="width:12px;height:12px;"></i>
+            ${cls.label}
+          </span>
+        </div>
+
+        <div class="track-result-grid">
+          <div class="track-meta">
+            <div class="track-meta-label">Origin</div>
+            <div class="track-meta-value">${originStr}</div>
+          </div>
+          <div class="track-meta">
+            <div class="track-meta-label">Destination</div>
+            <div class="track-meta-value">${destStr}</div>
+          </div>
+          <div class="track-meta" style="border-left:3px solid var(--red);">
+            <div class="track-meta-label">Pieces (PCS)</div>
+            <div class="track-meta-value" style="color:var(--red);font-size:1.15rem;">${pcs !== null ? pcs : '—'} <span style="font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">pcs</span></div>
+          </div>
+          <div class="track-meta" style="border-left:3px solid var(--red);">
+            <div class="track-meta-label">Gross Weight</div>
+            <div class="track-meta-value" style="color:var(--red);font-size:1.15rem;">${fmtWeight(weight)}</div>
+          </div>
+          <div class="track-meta">
+            <div class="track-meta-label">Route</div>
+            <div class="track-meta-value">${route}</div>
+          </div>
+          <div class="track-meta">
+            <div class="track-meta-label">Flight</div>
+            <div class="track-meta-value">${safe(flightNo)}</div>
+          </div>
+          <div class="track-meta">
+            <div class="track-meta-label">Latest Status</div>
+            <div class="track-meta-value" style="font-size:0.88rem;">${lastStat}</div>
+          </div>
+          <div class="track-meta">
+            <div class="track-meta-label">Last Update</div>
+            <div class="track-meta-value" style="font-size:0.85rem;">${lastDt || '—'}</div>
+          </div>
+        </div>
+
+        <p class="label" style="margin:1rem 0 0.6rem 0;color:var(--ink-soft);font-size:0.7rem;">Milestone History (${allRows.length})</p>
+        <ul class="track-timeline">
+          ${timelineHtml}
+        </ul>
+
+        <div class="track-result-note">
+          <i data-lucide="info" style="width:14px;height:14px;color:var(--sky);flex-shrink:0;margin-top:1px;"></i>
+          <span>Demo preview — live IndiGo Cargo backend will be connected in the next phase. The panel structure above is exactly how real tracking data will appear for <strong>${fullAwb}</strong>.</span>
+        </div>
+      `;
+      resultBox.classList.add('show');
+      lucide.createIcons();
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function renderError(msg, statusLabel = 'Invalid Input') {
+      resultBox.innerHTML = `
+        <div class="track-result-head">
+          <div class="track-result-awb" style="color:var(--red);">Unable to track</div>
+          <span class="track-result-status error">
+            <i data-lucide="alert-triangle" style="width:12px;height:12px;"></i>
+            ${statusLabel}
+          </span>
+        </div>
+        <p style="font-size:0.9rem;color:var(--ink-soft);margin:0;line-height:1.6;">${msg}</p>
+      `;
+      resultBox.classList.add('show');
+      lucide.createIcons();
+    }
+
+    /* ---------------------------------------------------------
+       Form submit — DEMO mode
+       Shows a realistic sample tracking result so the full UI
+       flow can be reviewed. To enable live tracking later,
+       replace the demo data below with a fetch() call to your
+       Python backend (see backend/app.py).
+       --------------------------------------------------------- */
+    document.getElementById('trackingForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const prefix = prefixInput.value.trim();
+      const awb    = numberInput.value.trim();
+
+      if (!prefix) {
+        renderError('Please enter the airline prefix (e.g. <strong>312</strong> for IndiGo Cargo).');
+        prefixInput.focus();
+        return;
+      }
+      if (!awb) {
+        renderError('Please enter the 8-digit AWB number printed on your Air Waybill.');
+        numberInput.focus();
+        return;
+      }
+      if (awb.length < 8) {
+        renderError(`AWB number must be <strong>8 digits</strong>. You entered ${awb.length} digit(s).`);
+        numberInput.focus();
+        return;
+      }
+
+      /* Loading state */
+      trackBtn.disabled = true;
+      const original = trackBtn.innerHTML;
+      trackBtn.innerHTML = '<i data-lucide="loader-2" style="width:16px;height:16px;animation:spin 0.8s linear infinite;"></i><span>Tracking…</span>';
+      lucide.createIcons();
+
+      /* Demo: simulate a short delay, then show sample tracking data */
+      setTimeout(() => {
+        const now = new Date().toLocaleString('en-IN', {
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit', hour12: true
+        });
+        const today = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+
+        const demoData = {
+          awb:      `${prefix}-${awb}`,
+          route:    'CCU-DEL',
+          status:   'Departed',
+          datetime: now,
+          source:   'demo',
+          milestones: [
+            { station:'CCU', milestone:'Manifested', pcs:24, weight:318.5, flight:'6E-2031', flight_date:today, org:'CCU', dest:'DEL', event_datetime: today + ' 12:00' },
+            { station:'CCU', milestone:'Departed',   pcs:24, weight:318.5, flight:'6E-2031', flight_date:today, org:'CCU', dest:'DEL', event_datetime: today + ' 14:30' },
+          ],
+          booking_rows: [
+            { milestone:'Booked',   station:'CCU', dest:'DEL', pcs:24, weight:318.5, flight:'6E-2031', event_datetime: today + ' 10:00' },
+            { milestone:'Accepted', station:'CCU', dest:'DEL', pcs:24, weight:318.5, flight:'6E-2031', event_datetime: today + ' 11:30' },
+          ],
+        };
+        renderResult(demoData);
+        trackBtn.disabled = false;
+        trackBtn.innerHTML = original;
+        lucide.createIcons();
+      }, 800);
+    });
+
+    /* Spin keyframe for loader */
+    const style = document.createElement('style');
+    style.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+
+    /* =========================================================
+       CONTACT FORM — sends email via FormSubmit.co (no backend needed)
+       On submit: POST form data to FormSubmit, which forwards to
+       pccs.ccu@gmail.com. Works on Vercel static hosting.
+       ========================================================= */
+    document.getElementById('contactForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form    = e.currentTarget;
+      const success = document.getElementById('contactSuccess');
+      const submitBtn = form.querySelector('.form-submit');
+      const originalBtnHTML = submitBtn.innerHTML;
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i data-lucide="loader-2" style="width:16px;height:16px;animation:spin 0.8s linear infinite;"></i><span>Sending…</span>';
+      lucide.createIcons();
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          form.reset();
+          setTimeout(() => { success.style.display = 'none'; }, 8000);
+        } else {
+          // Fallback: open mailto with prefilled body
+          const name    = formData.get('name')    || '';
+          const email   = formData.get('email')   || '';
+          const phone   = formData.get('phone')   || '';
+          const service = formData.get('service') || '';
+          const message = formData.get('message') || '';
+          const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AService: ${service}%0D%0A%0D%0A${message}`;
+          window.location.href = `mailto:pccs.ccu@gmail.com?subject=New inquiry from PCCS website&body=${body}`;
+        }
+      } catch (err) {
+        // Network error fallback to mailto
+        const fd = new FormData(form);
+        const body = `Name: ${fd.get('name') || ''}%0D%0AEmail: ${fd.get('email') || ''}%0D%0APhone: ${fd.get('phone') || ''}%0D%0AService: ${fd.get('service') || ''}%0D%0A%0D%0A${fd.get('message') || ''}`;
+        window.location.href = `mailto:pccs.ccu@gmail.com?subject=New inquiry from PCCS website&body=${body}`;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+        lucide.createIcons();
+      }
+    });
+
+    /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    /* =========================================================
+       PREMIUM SIGNATURE INTERACTIONS
+       ========================================================= */
+
+    /* ── PAGE LOADER — hide after load ─────────────────────── */
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('pageLoader');
+        if (loader) loader.classList.add('hidden');
+      }, 1700);
+    });
+
+    /* ── CUSTOM CURSOR — dot follows instantly, ring eases ── */
+    (function() {
+      if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      if (!dot || !ring) return;
+
+      let mx = 0, my = 0, rx = 0, ry = 0;
+
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      });
+
+      function raf() {
+        rx += (mx - rx) * 0.18;
+        ry += (my - ry) * 0.18;
+        ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+        requestAnimationFrame(raf);
+      }
+      raf();
+
+      // Hover state on interactive elements
+      const hoverables = 'a, button, .client-card, .service-card, .carrier-card, .pillar, .track-input, .form-control, .brand, .footer-brand';
+      document.querySelectorAll(hoverables).forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          dot.classList.add('hovering');
+          ring.classList.add('hovering');
+        });
+        el.addEventListener('mouseleave', () => {
+          dot.classList.remove('hovering');
+          ring.classList.remove('hovering');
+        });
+      });
+    })();
+
+    /* ── SCROLL PROGRESS BAR ───────────────────────────────── */
+    (function() {
+      const bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+        bar.style.width = scrolled + '%';
+      }, { passive: true });
+    })();
+
+    /* ── MAGNETIC BUTTONS ──────────────────────────────────── */
+    (function() {
+      if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+      const magnets = document.querySelectorAll('.btn-primary, .btn-nav, .track-btn, .form-submit, .client-card-cta-link');
+      magnets.forEach(el => {
+        el.classList.add('magnetic');
+        el.addEventListener('mousemove', e => {
+          const r = el.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const dx = (e.clientX - cx) * 0.25;
+          const dy = (e.clientY - cy) * 0.35;
+          el.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+        el.addEventListener('mouseleave', () => {
+          el.style.transform = '';
+        });
+      });
+    })();
+
+    /* ── NUMBER COUNT-UP — for trust stats ─────────────────── */
+    (function() {
+      const nums = document.querySelectorAll('.clients-trust-num, .stat-number');
+      if (!nums.length) return;
+
+      function animate(el) {
+        const text = el.textContent.trim();
+        // Parse: extract number, prefix, suffix
+        const m = text.match(/^([^\d]*)(\d+(?:\.\d+)?)(.*)$/);
+        if (!m) return;
+        const prefix = m[1];
+        const target = parseFloat(m[2]);
+        const suffix = m[3];
+        const isFloat = m[2].includes('.');
+        const duration = 1800;
+        const start = performance.now();
+
+        function tick(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = prefix + (isFloat ? v.toFixed(1) : Math.floor(v)) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = prefix + (isFloat ? target.toFixed(1) : target) + suffix;
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+
+      nums.forEach(n => obs.observe(n));
+    })();
+
+    /* =========================================================
+       CLIENTS MASCOT TOUR
+       Animated delivery agent walks across client cards one by one,
+       highlighting each. At the final CTA card, it stops, raises its
+       arm, and a speech bubble appears: "Come, let's work together
+       and be a part of our trusted clients!" Tour loops continuously.
+       ========================================================= */
+    (function() {
+      const mascot = document.querySelector('.clients-mascot');
+      const bubble = document.querySelector('.clients-bubble');
+      const grid   = document.querySelector('.clients-grid');
+      const section = document.getElementById('clients');
+      if (!mascot || !bubble || !grid || !section) return;
+
+      let tourTimers = [];
+      let loopTimer  = null;
+      let started    = false;
+
+      function clearTimers() {
+        tourTimers.forEach(t => clearTimeout(t));
+        tourTimers = [];
+        if (loopTimer) { clearTimeout(loopTimer); loopTimer = null; }
+      }
+
+      function playTour() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const cards = grid.querySelectorAll('.client-card, .client-card-cta');
+        if (!cards.length) return;
+
+        clearTimers();
+
+        // Reset state
+        cards.forEach(c => c.classList.remove('tour-active'));
+        bubble.classList.remove('show');
+        mascot.classList.remove('pointing');
+        mascot.classList.add('walking');
+        mascot.style.opacity = '1';
+
+        const gridRect = grid.getBoundingClientRect();
+        const mW = mascot.offsetWidth || 64;
+        let lastX = -999;
+
+        // Start position: just left of the first card
+        const firstRect = cards[0].getBoundingClientRect();
+        mascot.style.left = (firstRect.left - gridRect.left - mW - 12) + 'px';
+        mascot.style.top  = (firstRect.bottom - gridRect.top + 6) + 'px';
+
+        const stepMs = 1100;
+
+        cards.forEach((card, i) => {
+          // Move to card
+          tourTimers.push(setTimeout(() => {
+            const r = card.getBoundingClientRect();
+            const x = r.left - gridRect.left + r.width / 2;
+            const y = r.bottom - gridRect.top + 6;
+
+            // Face direction of movement
+            if (x < lastX - 5) mascot.classList.add('facing-left');
+            else mascot.classList.remove('facing-left');
+            lastX = x;
+
+            mascot.style.left = (x - mW / 2) + 'px';
+            mascot.style.top  = y + 'px';
+
+            // Highlight current card
+            cards.forEach(c => c.classList.remove('tour-active'));
+            card.classList.add('tour-active');
+          }, (i + 1) * stepMs));
+
+          // At the CTA card (last one), stop walking + show bubble
+          if (i === cards.length - 1) {
+            tourTimers.push(setTimeout(() => {
+              mascot.classList.remove('walking');
+              mascot.classList.add('pointing');
+
+              const r = card.getBoundingClientRect();
+              bubble.style.left = (r.left - gridRect.left + r.width / 2) + 'px';
+              bubble.style.top  = (r.top - gridRect.top - 12) + 'px';
+              bubble.classList.add('show');
+            }, (i + 1) * stepMs + 700));
+          }
+        });
+
+        // Restart loop after pause
+        const total = (cards.length + 1) * stepMs + 5500;
+        loopTimer = setTimeout(playTour, total);
+      }
+
+      // Start tour when section scrolls into view
+      const tourObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            setTimeout(playTour, 600);
+            tourObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      tourObs.observe(section);
+
+      // Pause when tab hidden; resume when visible again + section on-screen
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          clearTimers();
+          mascot.style.opacity = '0';
+        } else if (started) {
+          const r = section.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) {
+            setTimeout(playTour, 800);
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
